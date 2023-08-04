@@ -81,10 +81,11 @@ function populateUI(profile) {
     const profileImage = new Image(200, 200);
     profileImage.src = profile.images[0].url;
     document.getElementById("avatar").appendChild(profileImage);
-    document.getElementById("artists").innerText = profile.id;
+    document.getElementById("artists").innerText = profile.items;
     document.getElementById("email").innerText = profile.email;
     document.getElementById("uri").innerText = profile.uri;
     document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
     document.getElementById("url").innerText = profile.href;
     document.getElementById("url").setAttribute("href", profile.href);
   }
+}
