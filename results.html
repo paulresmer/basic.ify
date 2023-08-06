@@ -8,8 +8,10 @@
 
   <style>
     body {
-      width: 500px;
-      height: 700px;
+      width: 360px;
+      height: 640px;
+      margin-left: auto;
+      margin-right: auto;
       border: 1px solid black;
     }
 
@@ -49,13 +51,29 @@
 
     table {
       border-collapse: collapse;
-      width: 100%;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     td, th {
-      border: 1px solid #dddddd;
+      width: 80%;
+      border: 2px solid #dddddd;
+      border-top-style: none;
       text-align: left;
-      padding: 8px;
+      padding: 10px;
+    }
+
+    p.score {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p.uri {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   </style>
@@ -90,22 +108,63 @@
         </tr>
 
         <tr>
-          <td>joji</td>
-          <td>keshi</td>
+          <td><span id="a0"></span></td>
+          <td><span id="g0"></span></td>
         </tr>
 
         <tr>
-          <td>98</td>
-          <td>75</td>
+          <td><span id="a1"></span></td>
+          <td><span id="g1"></span></td>
         </tr>
+
+        <tr>
+          <td><span id="a2"></span></td>
+          <td><span id="g2"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a3"></span></td>
+          <td><span id="g3"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a4"></span></td>
+          <td><span id="g4"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a5"></span></td>
+          <td><span id="g5"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a6"></span></td>
+          <td><span id="g6"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a7"></span></td>
+          <td><span id="g7"></span></td>
+        </tr>
+
+        <tr>
+          <td><span id="a8"></span></td>
+          <td><span id="g8"></span></td>
+        </tr>
+
+        <tr>
+          <td class="td_bottom"><span id="a9"></span></td>
+          <td class="td_bottom"><span id="g9"></span></td>
+        </tr>
+
       </table>
     </p>
    
-    <h2>your score:
+    <p class="score">your score:
       <span id="ug-score"></span>
-    </h2>
+    </p>
 
-    <p>spotify URI:
+    <p class="uri">spotify URI:
       <a id="uri" href="#"></a>
     </p>
 
