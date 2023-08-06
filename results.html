@@ -16,7 +16,7 @@
       margin-left: auto;
       margin-right: auto;
       border: 1px solid black;
-      background: beige;
+      background-image: url('paper.jpeg');
     }
 
     p.username {
@@ -53,16 +53,8 @@
       line-height: 0px;
     }
 
-    hr.hr2 {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      height: 2px;
-      background: black;
-    }
-
     table {
-      border-collapse: collapse;
+      border:solid black;
       width: 90%;
       margin-left: auto;
       margin-right: auto;
@@ -71,8 +63,6 @@
     td, th {
       font-size: 15px;
       width: 80%;
-      border: 2px solid #dddddd;
-      border-top-style: none;
       padding: 3px;
     }
 
@@ -134,14 +124,13 @@
   <p class="reportcard">
     STUDENT'S REPORT CARD
   </p>
-  <hr class="hr2">
 
   <section id="profile">
     <p>
     <table>
       <tr>
-        <th>Artists</th>
-        <th>grade</th>
+        <th class="edge">Artist</th>
+        <th class="edge">Grade</th>
       </tr>
       
         <tr>
@@ -229,7 +218,7 @@
           <td class="td2">
             <TT><span id="a9"></span></TT>
           </td>
-          <td>
+          <td class="edge">
             <TT><span id="g9"></span></TT>
           </td>
         </tr>
