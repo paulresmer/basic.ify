@@ -4,19 +4,115 @@
 <head>
   <meta charset="utf-8">
   <title>your results</title>
+  <script src="src/script.js" type="module"></script>
+
+  <style>
+    body {
+      width: 500px;
+      height: 700px;
+      border: 1px solid black;
+    }
+
+    p.username {
+      color: rgb(74, 74, 74);
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p.name_ {
+      font-size: 15px;
+      text-align: center;
+      line-height: 0px;
+      margin-top: 10px;
+    }
+
+    hr.hr1 {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .reportcard {
+      text-align: center;
+      margin-top: 40px;
+      line-height: 0px;
+    }
+
+    hr.hr2 {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 2px;
+      background: black;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+  </style>
 </head>
 
 <body>
-  <h1>your score: <span id="ug-score"></span></h1>
+  <p>
+    <p class="username">
+      <TT><span id="displayName"></span></TT>
+    </p>
+    <hr class="hr1">
+    <p class="name_">
+      Name
+    </p>
+  </p>
 
-  <section id="results">
-    <h2>results for: <span id="displayName"></span></h2>
+  <p class="date">
+    <span id="date"></span>
+  </p>
+
+  <p class="reportcard">
+    STUDENT'S REPORT CARD
+  </p>
+  <hr class="hr2">
+
+  <section id="profile"> 
+    <p>
+      <table>
+        <tr>
+          <th>Artists</th>
+          <th>grade</th>
+        </tr>
+
+        <tr>
+          <td>joji</td>
+          <td>keshi</td>
+        </tr>
+
+        <tr>
+          <td>98</td>
+          <td>75</td>
+        </tr>
+      </table>
+    </p>
+   
+    <h2>your score:
+      <span id="ug-score"></span>
+    </h2>
+
+    <p>spotify URI:
+      <a id="uri" href="#"></a>
+    </p>
+
     <span id="avatar"></span>
-    <ul>
-      <li>your top 5 artists: <span id="artists"></span></li>
-      <li>spotify uri: <a id="uri" href="#"></a></li>
-    </ul>
+    
   </section>
+
 </body>
 <script src="src/script.js" type="module"></script>
 
