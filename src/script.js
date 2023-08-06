@@ -86,7 +86,7 @@ async function fetchProfile(token) {
 }
 
 async function fetchTop(token) {
-  const result = await fetch("https://api.spotify.com/v1/me/top/artists", {
+  const result = await fetch("https://api.spotify.com/v1/me/top/artists?time_range=short_term", {
     method: "GET", headers: { Authorization: `Bearer ${token}` }
   });
 
@@ -107,6 +107,7 @@ function populateProfileUI(profile) {
     const profileImage = new Image(100, 100);
     profileImage.src = profile.images[0].url;
     document.getElementById("avatar").appendChild(profileImage);
+    document.getElementById("date").innerText = String(new Date().toDateString());
   }
 }
 
