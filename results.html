@@ -7,12 +7,16 @@
   <script src="src/script.js" type="module"></script>
 
   <style>
-    body {
+    div {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    	-webkit-box-sizing: border-box;
       width: 360px;
       height: 640px;
       margin-left: auto;
       margin-right: auto;
       border: 1px solid black;
+      background: beige;
     }
 
     p.username {
@@ -27,6 +31,14 @@
       text-align: center;
       line-height: 0px;
       margin-top: 10px;
+    }
+
+    p.date {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
     }
 
     hr.hr1 {
@@ -57,13 +69,34 @@
     }
 
     td, th {
-      font-family: 'Times New Roman', Times, serif;
       font-size: 15px;
       width: 80%;
       border: 2px solid #dddddd;
       border-top-style: none;
+      padding: 3px;
+    }
+
+    th {
+      font-family: 'Times New Roman', Times, serif;
       text-align: left;
-      padding: 5px;
+    }
+
+    .td1 {
+      margin-left: 2px;
+      margin-top: 1px;
+    }
+
+    .td2 {
+      margin-left: 1px;
+    }
+
+    .td3 {
+      margin-left: 3px;
+      margin-top: 1px;
+    }
+
+    .td4 {
+      margin-bottom: 1px;
     }
 
     p.score {
@@ -72,27 +105,30 @@
       margin-right: auto;
     }
 
-    p.uri {
+    p.pfp {
       width: 90%;
       margin-left: auto;
       margin-right: auto;
     }
+
   </style>
 </head>
 
 <body>
+  <div>
+
   <p>
-  <p class="username">
-    <TT><span id="displayName"></span></TT>
-  </p>
-  <hr class="hr1">
-  <p class="name_">
-    Name
-  </p>
+    <p class="username">
+      <TT><span id="displayName"></span></TT>
+    </p>
+    <hr class="hr1">
+    <p class="name_">
+      Name
+    </p>
   </p>
 
-  <p class="date">
-    <span id="date"></span>
+  <p class="date">date: 
+    <TT><span id="date"></span></TT>
   </p>
 
   <p class="reportcard">
@@ -109,53 +145,93 @@
       </tr>
       
         <tr>
-          <td><span id="a0"></span></td>
-          <td><span id="g0"></span></td>
+          <td class="td1">
+            <TT><span id="a0"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g0"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a1"></span></td>
-          <td><span id="g1"></span></td>
+          <td class="td2">
+            <TT><span id="a1"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g1"></span></TT>
+          </td>
+        </tr>
+
+        <tr class="td3">
+          <td class="td1">
+            <TT><span id="a2"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g2"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a2"></span></td>
-          <td><span id="g2"></span></td>
+          <td class="td4">
+            <TT><span id="a3"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g3"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a3"></span></td>
-          <td><span id="g3"></span></td>
+          <td class="td2">
+            <TT><span id="a4"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g4"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a4"></span></td>
-          <td><span id="g4"></span></td>
+          <td class="td3">
+            <TT><span id="a5"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g5"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a5"></span></td>
-          <td><span id="g5"></span></td>
+          <td class="td1">
+            <TT><span id="a6"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g6"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a6"></span></td>
-          <td><span id="g6"></span></td>
+          <td class="td3">
+            <TT><span id="a7"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g7"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a7"></span></td>
-          <td><span id="g7"></span></td>
+          <td class="td4">
+            <TT><span id="a8"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g8"></span></TT>
+          </td>
         </tr>
 
         <tr>
-          <td><span id="a8"></span></td>
-          <td><span id="g8"></span></td>
-        </tr>
-
-        <tr>
-          <td class="td_bottom"><span id="a9"></span></td>
-          <td class="td_bottom"><span id="g9"></span></td>
+          <td class="td2">
+            <TT><span id="a9"></span></TT>
+          </td>
+          <td>
+            <TT><span id="g9"></span></TT>
+          </td>
         </tr>
       
 
@@ -165,11 +241,14 @@
     <p class="score">your score:
       <span id="ug-score"></span>
     </p>
-
-    <span id="avatar"></span>
+    
+    <p class="pfp">
+      <span id="avatar"></span>
+    </p>
 
   </section>
 
+  </div>
 </body>
 <script src="src/script.js" type="module"></script>
 
