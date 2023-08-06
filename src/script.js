@@ -11,10 +11,10 @@ if (!code) {
   const profile = await fetchProfile(accessToken);
   const top = await fetchTop(accessToken);
   populateProfileUI(profile);
-  const artistIDs = populateTopUI(top, 5);
+  const artistIDs = populateTopUI(top, 10);
   const artists = await fetchArtists(accessToken, artistIDs);
-  generateScore(Array.from(artists));
-
+  const artistArray = Array.from(Object.values(artists)[0]);
+  generateScore(artistArray);
 }
 
 /* redirect function; prompts user authentication. only runs if auth code is not 
@@ -113,14 +113,13 @@ function populateProfileUI(profile) {
 }
 
 function populateTopUI(top, n) {
-  let topArtists = ""
   let topArtistsIDs = ""
   for (let i = 0; i < n; i++) { // top n=5 artists
-    topArtists += top.items[i].name + "\n";
+    // document.getElementById("a" + String(i)).innerText = top.items[i].name
     topArtistsIDs += top.items[i].id + ","
   }
   topArtistsIDs = topArtistsIDs.slice(0, topArtistsIDs.length - 1)
-  document.getElementById("artists").innerText = "\n" + topArtists;
+
   return topArtistsIDs
 }
 
@@ -130,6 +129,5 @@ function generateScore(artists) {
     score += artists[i].popularity
   }
   score /= artists.length;
-
   document.getElementById("ug-score").innerText = String(score);
 }
