@@ -104,11 +104,9 @@ async function fetchArtists(token, ids) {
 function populateProfileUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
   if (profile.images[0]) {
-    const profileImage = new Image(200, 200);
+    const profileImage = new Image(100, 100);
     profileImage.src = profile.images[0].url;
     document.getElementById("avatar").appendChild(profileImage);
-    document.getElementById("uri").innerText = profile.uri;
-    document.getElementById("uri").setAttribute("href", profile.uri);
   }
 }
 
@@ -130,6 +128,6 @@ function generateScore(artists) {
     score += artists[i].popularity;
   }
   score /= artists.length;
-  score = (100 - score).toFixed(2);
+  score = (score).toFixed(2);
   document.getElementById("ug-score").innerText = String(score);
 }
