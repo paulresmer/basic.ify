@@ -115,10 +115,10 @@ function populateProfileUI(profile) {
 function populateTopUI(top, n) {
   let topArtistsIDs = ""
   for (let i = 0; i < n; i++) { // top n=5 artists
-    // document.getElementById("a" + String(i)).innerText = top.items[i].name
-    topArtistsIDs += top.items[i].id + ","
+    document.getElementById("a" + String(i)).innerText = top.items[i].name
+    topArtistsIDs += top.items[i].id + ",";
   }
-  topArtistsIDs = topArtistsIDs.slice(0, topArtistsIDs.length - 1)
+  topArtistsIDs = topArtistsIDs.slice(0, topArtistsIDs.length - 1);
 
   return topArtistsIDs
 }
@@ -126,8 +126,10 @@ function populateTopUI(top, n) {
 function generateScore(artists) {
   let score = 0;
   for (let i = 0; i < artists.length; i++) {
-    score += artists[i].popularity
+    document.getElementById("g" + String(i)).innerText = artists[i].popularity;
+    score += artists[i].popularity;
   }
   score /= artists.length;
+  score = (100 - score).toFixed(2);
   document.getElementById("ug-score").innerText = String(score);
 }
