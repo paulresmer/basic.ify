@@ -1,17 +1,24 @@
-const clientId = "e7b06f17219943c8adb37d1abf9de6c2"; // Replace with your client ID
+const clientId = "e7b06f17219943c8adb37d1abf9de6c2"; // replace if running locally
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
+/* if auth code not included within url (window.location.search), redirect to prompt
+user for authentication credentials */
 if (!code) {
   redirectToAuthCodeFlow(clientId);
 } else {
   const accessToken = await getAccessToken(clientId, code);
   const profile = await fetchProfile(accessToken);
-  populateProfileUI(profile);
   const top = await fetchTop(accessToken);
-  populateTopUI(top);
+  populateProfileUI(profile);
+  const artistIDs = populateTopUI(top, 5);
+  const artists = await fetchArtists(accessToken, artistIDs);
+  generateScore(Array.from(artists));
+
 }
 
+/* redirect function; prompts user authentication. only runs if auth code is not 
+present within url */
 export async function redirectToAuthCodeFlow(clientId) {
   const verifier = generateRandomVerifier(128);
   const challenge = await generateChall(verifier);
@@ -21,8 +28,8 @@ export async function redirectToAuthCodeFlow(clientId) {
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("response_type", "code");
-  params.append("redirect_uri", "http://localhost:5173/results.html");
-  params.append("scope", "user-read-private user-top-read");
+  params.append("redirect_uri", "http://localhost:5173/results.html"); // redirect for successful auth
+  params.append("scope", "user-read-private user-top-read"); // access token scope params
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
 
@@ -48,7 +55,7 @@ async function generateChall(codeVerifier) {
     .replace(/=+$/, '');
 }
 
-
+// generates api access token for specified scope 
 export async function getAccessToken(clientId, code) {
   const verifier = localStorage.getItem("verifier");
 
@@ -56,7 +63,7 @@ export async function getAccessToken(clientId, code) {
   params.append("client_id", clientId);
   params.append("grant_type", "authorization_code");
   params.append("code", code);
-  params.append("redirect_uri", "http://localhost:5173/results.html");
+  params.append("redirect_uri", "http://localhost:5173/results.html"); // redirect for successful auth
   params.append("code_verifier", verifier);
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -68,6 +75,8 @@ export async function getAccessToken(clientId, code) {
   const { access_token } = await result.json();
   return access_token;
 }
+
+// basic fetch functions
 
 async function fetchProfile(token) {
   const result = await fetch("https://api.spotify.com/v1/me/", {
@@ -82,7 +91,14 @@ async function fetchTop(token) {
   });
 
   return await result.json();
+}
 
+async function fetchArtists(token, ids) {
+  const result = await fetch("https://api.spotify.com/v1/artists?ids=" + ids, {
+    method: "GET", headers: { Authorization: `Bearer ${token}` }
+  });
+
+  return await result.json();
 }
 
 function populateProfileUI(profile) {
@@ -96,7 +112,24 @@ function populateProfileUI(profile) {
   }
 }
 
-function populateTopUI(top) {
-  document.getElementById("artists").innerText = top.items[0].name + ", " + top.items[1].name;
+function populateTopUI(top, n) {
+  let topArtists = ""
+  let topArtistsIDs = ""
+  for (let i = 0; i < n; i++) { // top n=5 artists
+    topArtists += top.items[i].name + "\n";
+    topArtistsIDs += top.items[i].id + ","
+  }
+  topArtistsIDs = topArtistsIDs.slice(0, topArtistsIDs.length - 1)
+  document.getElementById("artists").innerText = "\n" + topArtists;
+  return topArtistsIDs
+}
 
+function generateScore(artists) {
+  let score = 0;
+  for (let i = 0; i < artists.length; i++) {
+    score += artists[i].popularity
+  }
+  score /= artists.length;
+
+  document.getElementById("ug-score").innerText = String(score);
 }
