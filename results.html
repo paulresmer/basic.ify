@@ -15,7 +15,6 @@
       height: 640px;
       margin-left: auto;
       margin-right: auto;
-      border: 1px solid black;
       background-image: url('paper.jpeg');
     }
 
@@ -23,14 +22,19 @@
       color: rgb(74, 74, 74);
       font-size: 15px;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 0;
+      padding-top: 5%;
     }
 
     p.name_ {
-      font-size: 15px;
+      font-size: 12px;
       text-align: center;
-      line-height: 0px;
-      margin-top: 10px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
     }
 
     p.date {
@@ -41,12 +45,6 @@
       border-bottom-width: 1px;
     }
 
-    hr.hr1 {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     .reportcard {
       text-align: center;
       margin-top: 40px;
@@ -54,51 +52,50 @@
     }
 
     table {
-      border:solid black;
+      border-collapse: collapse;
+      border: 2px solid black;
+      border-left-style: none;
+      border-right-style: none;
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    th.edge {
+      padding: 7px;
+      text-align: left;
+    }
+
+    td.td1 {
+      padding-left: 5px;
+    }
+
+    td.td2 {
+      padding-left: 4px;
+    }
+
+    td.td3 {
+      padding-left: 6px;
+    }
+
+    td.td4 {
+      padding-left: 3px;
     }
 
     td, th {
       font-size: 15px;
       width: 80%;
       padding: 3px;
+      border: 1px solid black;
+
     }
 
-    th {
-      font-family: 'Times New Roman', Times, serif;
-      text-align: left;
-    }
-
-    .td1 {
-      margin-left: 2px;
-      margin-top: 1px;
-    }
-
-    .td2 {
-      margin-left: 1px;
-    }
-
-    .td3 {
-      margin-left: 3px;
-      margin-top: 1px;
-    }
-
-    .td4 {
-      margin-bottom: 1px;
-    }
-
-    p.score {
+    p.p1 {
       width: 90%;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    p.pfp {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 15px;
+      text-align: center;
     }
 
   </style>
@@ -111,7 +108,7 @@
     <p class="username">
       <TT><span id="displayName"></span></TT>
     </p>
-    <hr class="hr1">
+    
     <p class="name_">
       Name
     </p>
@@ -151,8 +148,8 @@
           </td>
         </tr>
 
-        <tr class="td3">
-          <td class="td1">
+        <tr>
+          <td class="td3">
             <TT><span id="a2"></span></TT>
           </td>
           <td>
@@ -161,7 +158,7 @@
         </tr>
 
         <tr>
-          <td class="td4">
+          <td class="td1">
             <TT><span id="a3"></span></TT>
           </td>
           <td>
@@ -170,7 +167,7 @@
         </tr>
 
         <tr>
-          <td class="td2">
+          <td class="td4">
             <TT><span id="a4"></span></TT>
           </td>
           <td>
@@ -179,7 +176,7 @@
         </tr>
 
         <tr>
-          <td class="td3">
+          <td class="td1">
             <TT><span id="a5"></span></TT>
           </td>
           <td>
@@ -188,7 +185,7 @@
         </tr>
 
         <tr>
-          <td class="td1">
+          <td class="td3">
             <TT><span id="a6"></span></TT>
           </td>
           <td>
@@ -197,7 +194,7 @@
         </tr>
 
         <tr>
-          <td class="td3">
+          <td class="td2">
             <TT><span id="a7"></span></TT>
           </td>
           <td>
@@ -206,7 +203,7 @@
         </tr>
 
         <tr>
-          <td class="td4">
+          <td class="td3">
             <TT><span id="a8"></span></TT>
           </td>
           <td>
@@ -215,10 +212,10 @@
         </tr>
 
         <tr>
-          <td class="td2">
+          <td class="td3">
             <TT><span id="a9"></span></TT>
           </td>
-          <td class="edge">
+          <td>
             <TT><span id="g9"></span></TT>
           </td>
         </tr>
@@ -227,12 +224,14 @@
     </table>
     </p>
 
-    <p class="score">your score:
+    <p class="p1">your score:
       <span id="ug-score"></span>
     </p>
-    
-    <p class="pfp">
-      <span id="avatar"></span>
+
+    <p class="p1">Errors in grades or absences must be corrected within 30 days after the close of semester.</p>
+
+    <p class="p1">
+      <b>Take this card and your gradebook when you go to registrar.</b>
     </p>
 
   </section>

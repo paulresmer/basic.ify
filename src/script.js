@@ -103,12 +103,7 @@ async function fetchArtists(token, ids) {
 
 function populateProfileUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
-  if (profile.images[0]) {
-    const profileImage = new Image(100, 100);
-    profileImage.src = profile.images[0].url;
-    document.getElementById("avatar").appendChild(profileImage);
-    document.getElementById("date").innerText = String(new Date().toDateString());
-  }
+  document.getElementById("date").innerText = String(new Date().toDateString());
 }
 
 function populateTopUI(top, n) {
