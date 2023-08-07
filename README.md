@@ -1,6 +1,6 @@
 # underground.ify
 
-A web app that allows users to examine the uniqueness of their music tastes. 
+A web app that allows Spotify users to examine the uniqueness of their music tastes. 
 
 Viewable at https://paulresmer.github.io/underground.ify.
 
