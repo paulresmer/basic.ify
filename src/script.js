@@ -28,7 +28,7 @@ export async function redirectToAuthCodeFlow(clientId) {
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("response_type", "code");
-  params.append("redirect_uri", "https://paulresmer.github.io/underground.ify/results.html"); // redirect for successful auth
+  params.append("redirect_uri", "https://paulresmer.github.io/basic.ify/results.html"); // redirect for successful auth
   params.append("scope", "user-read-private user-top-read"); // access token scope params
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
@@ -63,7 +63,7 @@ export async function getAccessToken(clientId, code) {
   params.append("client_id", clientId);
   params.append("grant_type", "authorization_code");
   params.append("code", code);
-  params.append("redirect_uri", "https://paulresmer.github.io/underground.ify/results.html"); // redirect for successful auth
+  params.append("redirect_uri", "https://paulresmer.github.io/basic.ify/results.html"); // redirect for successful auth
   params.append("code_verifier", verifier);
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -103,7 +103,7 @@ async function fetchArtists(token, ids) {
 
 function populateProfileUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
-  document.getElementById("date").innerText = String(new Date().toDateString());
+  document.getElementById("date").innerText = (new Date()).toDateString();
 }
 
 function populateTopUI(top, n) {
