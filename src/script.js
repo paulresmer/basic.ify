@@ -103,7 +103,8 @@ async function fetchArtists(token, ids) {
 
 function populateProfileUI(profile) {
   document.getElementById("displayName").innerText = profile.display_name;
-  document.getElementById("date").innerText = String(new Date().toDateString());
+  document.getElementById("date").innerText = ((new Date()).toDateString()).slice(0,-4);
+  document.getElementById("year").innerText = String(new Date().getFullYear());
 }
 
 function populateTopUI(top, n) {
