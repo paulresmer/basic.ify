@@ -11,7 +11,7 @@ div.header {
 
 div.head_buttons {
   text-align: right;
-  padding: 4%;
+  padding: 4;
   border-bottom-style: solid;
   border-color: black;
   border-radius: 1px;
@@ -33,6 +33,8 @@ div.head_buttons {
 
 body {
   text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .link{
@@ -51,4 +53,10 @@ body {
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
+  transition-duration: .4s;
+}
+
+.spotify:hover {
+  background-color: #189b46;
+  color: rgb(211, 211, 211);
 }
