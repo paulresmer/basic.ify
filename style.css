@@ -9,6 +9,28 @@ div.header {
   border-radius: 1px;
 }
 
+div.head_buttons {
+  text-align: right;
+  padding: 4%;
+  border-bottom-style: solid;
+  border-color: black;
+  border-radius: 1px;
+}
+
+.btns {
+  margin: 5px;
+  border: none;
+  height: 36px;
+  width: 80px;
+  border-radius: 18px;
+  transition-duration: .4s;
+}
+
+.btns:hover {
+  background-color: grey;
+  color: white;
+}
+
 body {
   text-align: center;
 }
