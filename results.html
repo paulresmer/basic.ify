@@ -19,7 +19,6 @@
     }
 
     p.username {
-      color: rgb(74, 74, 74);
       font-size: 15px;
       text-align: center;
       margin-bottom: 0;
@@ -38,8 +37,13 @@
     }
 
     .date {
+      color: black;
       width: 70%;
       border: 0px;
+    }
+
+    .change {
+      color: rgba(74, 74, 74, 0.75);
     }
 
     .reportcard {
@@ -57,6 +61,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+    
 
     table.dts {
       border-top-style: none;
@@ -98,6 +103,10 @@
       border: 1px solid black;
     }
 
+    td {
+      color: rgba(74, 74, 74, 0.75);
+    }
+
     p.p1 {
       width: 90%;
       margin-left: auto;
@@ -129,7 +138,7 @@
 
   <p>
     <p class="username">
-      <TT><span id="displayName"></span></TT>
+      <TT class="change"><span id="displayName"></span></TT>
     </p>
     
     <p class="name_">
@@ -138,8 +147,8 @@
   </p>
 
   <table class="dts">
-    <td class="date">Date: <TT><span id="date"></span></TT></th>
-    <td class="date">Year: <TT><span id="year"></span></TT></th>
+    <td class="date">Date: <TT class="change"><span id="date"></span></TT></th>
+    <td class="date">Year: <TT class="change"><span id="year"></span></TT></th>
   </table>
 
   <p class="reportcard">
@@ -247,7 +256,7 @@
     </p>
 
     <p class="p1">
-      <span id="ug-score"></span> : semester grade
+      <TT class="change"><span id="ug-score"></span></TT> : semester grade
     </p>
 
     <p class="p1">Errors in grades or absences must be corrected within 30 days after the close of semester.</p>
