@@ -37,12 +37,9 @@
       margin-top: 0;
     }
 
-    p.date {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
+    .date {
+      width: 70%;
+      border: 0px;
     }
 
     .reportcard {
@@ -61,8 +58,12 @@
       margin-right: auto;
     }
 
+    table.dts {
+      border-top-style: none;
+      border-bottom-width: 1px;
+    }
+
     th.edge {
-      padding: 7px;
       text-align: left;
     }
 
@@ -82,12 +83,19 @@
       padding-left: 2px;
     }
 
+    .lft {
+      border-left: none;
+    }
+
+    .rgt {
+      border-right: none;
+    }
+
     td, th {
       font-size: 15px;
       width: 80%;
       padding: 3px;
       border: 1px solid black;
-
     }
 
     p.p1 {
@@ -114,11 +122,10 @@
     </p>
   </p>
 
-  <p class="date">Date: 
-    <TT><span id="date"></span></TT>
-    Year: 
-    <TT><span id="year"></span></TT>
-  </p>
+  <table class="dts">
+    <td class="date">Date: <TT><span id="date"></span></TT></th>
+    <td class="date">Year: <TT><span id="year"></span></TT></th>
+  </table>
 
   <p class="reportcard">
     STUDENT'S REPORT CARD
@@ -128,101 +135,99 @@
     <p>
     <table>
       <tr>
-        <th class="edge">Artist</th>
-        <th class="edge">Grade</th>
+        <th class="edge, lft">Artist</th>
+        <th class="edge, rgt">Grade</th>
       </tr>
-      
-        <tr>
-          <td class="td1">
-            <TT><span id="a0"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g0"></span></TT>
-          </td>
-        </tr>
+    
+      <tr>
+        <td class="td1, lft">
+          <TT><span id="a0"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g0"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td2">
-            <TT><span id="a1"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g1"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td2, lft">
+          <TT><span id="a1"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g1"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td3">
-            <TT><span id="a2"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g2"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td3, lft">
+          <TT><span id="a2"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g2"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td1">
-            <TT><span id="a3"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g3"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td1, lft">
+          <TT><span id="a3"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g3"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td4">
-            <TT><span id="a4"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g4"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td4, lft">
+          <TT><span id="a4"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g4"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td1">
-            <TT><span id="a5"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g5"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td1, lft">
+          <TT><span id="a5"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g5"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td3">
-            <TT><span id="a6"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g6"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td3, lft">
+          <TT><span id="a6"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g6"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td2">
-            <TT><span id="a7"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g7"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td2, lft">
+          <TT><span id="a7"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g7"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td3">
-            <TT><span id="a8"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g8"></span></TT>
-          </td>
-        </tr>
+      <tr>
+        <td class="td3, lft">
+          <TT><span id="a8"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g8"></span></TT>
+        </td>
+      </tr>
 
-        <tr>
-          <td class="td2">
-            <TT><span id="a9"></span></TT>
-          </td>
-          <td>
-            <TT><span id="g9"></span></TT>
-          </td>
-        </tr>
-      
-
+      <tr>
+        <td class="td2, lft">
+          <TT><span id="a9"></span></TT>
+        </td>
+        <td class="rgt">
+          <TT><span id="g9"></span></TT>
+        </td>
+      </tr>
     </table>
     </p>
 
