@@ -68,10 +68,6 @@
       border-bottom-width: 1px;
     }
 
-    th.edge {
-      text-align: left;
-    }
-
     td.td1 {
       padding-left: 5px;
     }
@@ -101,6 +97,10 @@
       width: 80%;
       padding: 3px;
       border: 1px solid black;
+    }
+
+    tr.head {
+      text-align: left;
     }
 
     td {
@@ -158,9 +158,9 @@
   <section id="profile">
     <p>
     <table>
-      <tr>
-        <th class="edge, lft">Artist</th>
-        <th class="edge, rgt">Grade</th>
+      <tr class="head">
+        <th class="lft">Artist</th>
+        <th class="rgt">Grade</th>
       </tr>
     
       <tr>
